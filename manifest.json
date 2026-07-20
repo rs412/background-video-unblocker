@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Background Video Unblocker",
+  "version": "26.07.20",
+  "description": "Block visibilitychange, blur and pagehide events, prevent websites detect tab switch, keep video playing in background.",
+  "permissions": ["storage"],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_width": 220,
+    "default_height": 100,
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}
